@@ -1,0 +1,13 @@
+%inherit{color:red;}
+
+.label{
+@extend %inherit;
+}
+
+@mixin test{
+width:150px;
+height:150px;
+background: red;;
+border:2px solid gray;
+}
+.box{@include test}

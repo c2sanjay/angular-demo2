@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Mobile Programming
+      <img src="assets/logo.png" alt="Angular Project" />
+    </a>
+    <!-- <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a routerLink="/" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/country" routerLinkActive="active" class="nav-link">Country</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Blogpost" routerLinkActive="active" [queryParams]='{name:"sanjay"}' class="nav-link">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='login'>Login <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='register'>Register <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='product'>Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='student'>Student</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='productList'>productList</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerActiveLink='Active' routerLink='productList/:productId'>productDetail</a>
+
+        </li>
+      </ul>
+    </div>
+    <button type="submit" class='btn btn btn-primary float-right' (click)='LogIn()'>Login</button> &nbsp;&nbsp;&nbsp;
+    <button type="submit" class='btn btn btn-primary float-right' (click)='LogOut()'>Logout</button>
+
+  </div>
+</nav>

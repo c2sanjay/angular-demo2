@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAFA,MAEM,CAFE;EAAC,KAAK,EAAC,GAAG;CAAG;;AAYrB,AAAA,IAAI,CAAA;EALJ,KAAK,EAAC,KAAK;EACX,MAAM,EAAC,KAAK;EACZ,UAAU,EAAE,GAAG;EACf,MAAM,EAAC,cAAc;CAED",
+    "sources": [
+        "student.component.scss"
+    ],
+    "names": [],
+    "file": "student.component.css"
+}

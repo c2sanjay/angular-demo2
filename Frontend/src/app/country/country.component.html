@@ -1,0 +1,114 @@
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+
+    <form [formGroup]='countryForm'>
+      <select formControlName='country' class="custom-select">
+        <option>Select list of countries</option>
+        <option *ngFor="let c of countriesValues" [ngValue]='c'>{{c.id }} - {{c.name}}</option>
+      </select>
+      <p>Selected Country: {{country?.name}}</p>
+    </form>
+
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>languages</th>
+          <th>alpha2_code</th>
+          <th>alpha3_code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of countries.languages">
+
+          <td>{{user.iso639_1}}</td>
+          <td>{{user.iso639_2}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.nativeName}}</td>
+        </tr>
+        <tr *ngFor="let user1 of countries.regionalBlocs">
+          <td>{{user1.acronym}}</td>
+          <td>{{user1.name}}</td>
+          <td>{{user1.otherNames}}</td>
+        </tr>
+        <tr>
+          <td>{{countries.name}}</td>
+          <td>{{countries.alpha2Code}}</td>
+          <td>{{countries.capital}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class='dropdown'>
+      <select class="custom-select" *ngFor="let list of countries.currencies">
+        <option>Select list of translations</option>
+        <option>{{list.code}}</option>
+        <option>{{list.name}}</option>
+        <option>{{list.symbol}}</option>
+      </select>
+    </div>
+    <div class='dropdown'>
+      <select class="custom-select">
+        <option>Select list of translations</option>
+        <option *ngFor="let list of countries.borders">{{list}}</option>
+
+      </select>
+    </div>
+
+    <div class='dropdown'>
+      <select class="custom-select">
+        <option>Select list of translations</option>
+        <option *ngFor="let list of countries.altSpellings">{{list}}</option>
+
+      </select>
+    </div>
+
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>site_ID</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="4"> No. of Records Found: {{countries.found}}</td>
+        </tr>
+        <tr *ngFor="let item of countries.posts">
+
+          <th>{{item.ID}}</th>
+          <th>{{item.site_ID}}</th>
+          <th>{{item.date | date}}<p [innerHTML]="html"></p>
+          </th>
+
+          <th [innerHTML]="item.content">{{item.content}}</th>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class='row'>
+      <ul>
+
+        <li *ngFor='let it of countries.posts'>
+          <!-- {{it.author|json}} -->
+          {{it.author.ID}} - {{it.author.name}} - {{it.author.first_name}}
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- const finalArr = [];
+for (const key of Object.keys(obj))  {
+  finalArr.push({key: key, value: obj[key]});
+} -->

@@ -1,0 +1,25 @@
+<div class='container'>
+  <br /> <br /> <br /> <br />
+  <app-top-bar></app-top-bar>
+  <h2>Product List</h2>
+
+  <div *ngFor="let product of products ">
+
+    <h3 class='text-primary'>
+      <a [title]="product.name + ' details'" [routerLink]="['/productList', productId]">
+        {{ product.name }}
+      </a>
+    </h3>
+
+    <p *ngIf='product.description'><b>Description</b>: {{product.description ? '&#10003;': '&#10004;'}}</p>
+
+    <button class='btn btn-primary' (click)="share()">Share</button>
+
+  </div>
+  <br />
+
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+
+
+</div>

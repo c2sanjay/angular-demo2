@@ -1,0 +1,44 @@
+h1 {
+  margin-top: 20px;
+}
+
+.page-desc {
+  border: pink;
+  background: #ccc;
+  margin-bottom: 20px;
+  border: 5px solid #dddddd;
+}
+
+.next {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 12.5px;
+  border-left-color: red;
+}
+
+.banner {
+  background-color: #f2ece4;
+  color: #036;
+}
+
+body.dark .banner {
+  background-color: #6b717f;
+  color: #d2e1dd;
+}
+
+.square-av {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 20px;
+}
+
+.square-aa {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  border-radius: 50px;
+}
+/*# sourceMappingURL=contact-form.component.css.map */

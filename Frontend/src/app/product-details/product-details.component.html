@@ -1,0 +1,16 @@
+<br /><br /><br /><br />
+<div class='container'>
+  <app-top-bar></app-top-bar>
+  <h2 class='text-dark'>Product Details </h2>
+
+
+  <div *ngFor="let product of products">
+    <div *ngIf="product">
+      <h3 class='text-primary'>{{ product.name }}</h3>
+      <h4 class='text-dark'>{{ product.price | currency }}</h4>
+      <p>{{ product.description }}</p>
+
+      <button class='btn btn-primary' (click)="addToCart(product)">Buy</button>
+    </div>
+  </div>
+</div>

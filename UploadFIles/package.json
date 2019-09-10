@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-express-multer-upload-multipartfile",
+  "version": "1.0.0",
+  "description": "Building a NodeJS-Express RestAPI for upload multipart file with Multer module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "Multer",
+    "MultipartFile",
+    "RestAPIs",
+    "Upload_File"
+  ],
+  "author": "JavaSampleApproach.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}

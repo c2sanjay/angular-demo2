@@ -1,0 +1,42 @@
+<div class='container'>
+
+  <br /><br />
+  <br /><br />
+  <div class='col-sm-12'>
+    <!-- <form [formGroup]='userForm' > -->
+    <div class='form-group'>
+      <input type="text" [(ngModel)]='_product.productCode' class="form-control" placeholder='product Code'>
+    </div>
+    <div class='form-group'>
+      <input type="text" [(ngModel)]='_product.productName' class="form-control" placeholder='product Name'>
+    </div>
+    <div class='form-group'>
+      <input type="text" [(ngModel)]='_product.productCountry' class="form-control" placeholder='product Country'>
+    </div>
+    <div class='text-center'>
+      <button class='btn btn-primary' (click)='saveData()'>Save</button> |
+      <button class='btn btn-primary' (click)='updateData()'>update</button>
+    </div>
+    <br /><br />
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Product Code</th>
+          <th>Product Name</th>
+          <th>Product Country</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productArr">
+          <td>{{item.productCode}}</td>
+          <td>{{item.productName}}</td>
+          <td>{{item.productCountry}}</td>
+          <td><button (click)="editProduct(item)" class='btn btn-success'> Edit</button> &nbsp;
+            <button (click)="deleteProduct(item._id)" class='btn btn-primary'>Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

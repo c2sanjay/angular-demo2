@@ -1,0 +1,11 @@
+.label {
+  color: red;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: red;
+  border: 2px solid gray;
+}
+/*# sourceMappingURL=student.component.css.map */

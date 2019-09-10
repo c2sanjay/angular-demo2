@@ -1,0 +1,106 @@
+<section class="cmspage mtb-40">
+  <div class="container">
+    <div class="page-desc">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 (click)='onChange()'>{{myContact}}</h1>
+          <form [formGroup]='contactForm' novalidate (click)="onSubmit()">
+
+            <div class='form-group'>
+              <input type="file" (change)="fileChange($event)" id="btnUpload" value="Upload" class='form-control'>
+            </div>
+            <div class="form-group">
+
+              <input class="form-control" name='name' formControlName='name' placeholder="Name" />
+            </div>
+
+            <div *ngIf="contactForm.controls['name'].invalid && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="contactForm.controls['name'].errors.required">
+                Name is required.
+              </div>
+              <div *ngIf="contactForm.controls['name'].errors.minlength">Name should be atleast of 4 digits</div>
+
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" formControlName='email' class="form-control" placeholder="E-Mail">
+            </div>
+            <div *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty ||
+              contactForm.controls['email'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="contactForm.controls['email'].errors.required">Email is required.</div>
+              <div *ngIf="contactForm.controls['email'].errors.email">Email is format is wrong</div>
+
+            </div>
+            <div class="form-group">
+              <input type="text" name="phone" formControlName='phone' class="form-control" placeholder="Phone">
+            </div>
+            <div *ngIf="contactForm.controls['phone'].invalid && (contactForm.controls['phone'].dirty || contactForm.controls['phone'].touched)"
+              class='alert alert-danger'>
+
+              <div *ngIf="contactForm.controls['phone'].errors.required">Phone Number is required</div>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" formControlName='message' class="form-control" placeholder="Message"></textarea>
+            </div>
+
+            <div *ngIf="contactForm.controls['message'].invalid && (contactForm.controls['message'].dirty || contactForm.controls['message'].touched)"
+              class='alert alert-danger'>
+              <div *ngIf="contactForm.controls['message'].errors.required">
+                Message is required
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">
+                Save
+              </button>&nbsp;
+              <button type="submit" (click)='saveContactData()' class="btn btn-success">
+                Save To DB
+              </button> &nbsp;
+              <button type="submit" (click)='updateContactData()' class="btn btn-success">
+                Update To DB
+              </button>
+            </div>
+          </form>
+          <!-- <p>Form value: {{ contactForm.value | json }}</p>
+          <p>Form status: {{ contactForm.status | json }}</p> -->
+        </div>
+      </div>
+    </div>
+
+
+    <table class="table table-bordered table-sm">
+      <thead>
+        <tr>
+          <th>Profile Pic</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Message</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of contactArray'>
+          <td><img src="http://localhost:3000/{{item.userpic}}" class="img-circle"></td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.message}}</td>
+          <td>
+            <button (click)="editContact(item)" class='btn btn-success'> Edit</button> &nbsp;
+            <button (click)="deleteContact(item._id)" class='btn btn-primary'>Delete</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+
+  <!-- <div class="next">
+  </div>
+
+  <DIV class='square-av'></DIV>
+  <div class='square-aa'></div> -->
